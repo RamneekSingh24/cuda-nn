@@ -41,9 +41,9 @@ NeuralNetData::NeuralNetData(std::string filePath)
 
     iss >> numData >> inputSize >> outputSize;
 
-    std::cout << numData << " " << inputSize << " " << outputSize << "\n";
+    // std::cout << numData << " " << inputSize << " " << outputSize << "\n";
 
-    std::cout << numData * inputSize * 4 / 8000 << "kB\n";
+    // std::cout << numData * inputSize * 4 / 8000 << "kB\n";
 
     host_input = new float[numData * inputSize];
     host_output = new float[numData * outputSize];
@@ -54,7 +54,7 @@ NeuralNetData::NeuralNetData(std::string filePath)
         {
             float x;
             iss >> x;
-            std::cout << x << " ";
+            // std::cout << x << " ";
             host_input[index(inp_i, item, numData)] = x;
         }
 
@@ -62,13 +62,13 @@ NeuralNetData::NeuralNetData(std::string filePath)
         {
             float x;
             iss >> x;
-            std::cout << x << " ";
+            // std::cout << x << " ";
             host_output[index(out_i, item, numData)] = x;
         }
-        std::cout << "\n";
+        // std::cout << "\n";
     }
 
-    printf("\n---------\n");
+    // printf("\n---------\n");
 
     // for (int i = 0; i < numData * inputSize; i++)
     // {
@@ -80,7 +80,7 @@ NeuralNetData::NeuralNetData(std::string filePath)
     //     printf("%f ", host_output[i]);
     // }
 
-    printf("\n---------\n");
+    // printf("\n---------\n");
 
     file.close();
     cursor = 0;
