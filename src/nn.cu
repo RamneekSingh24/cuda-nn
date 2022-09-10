@@ -244,9 +244,9 @@ void NeuralNet::run(NeuralNetData data, int numEpochs)
                                                     BATCH_SIZE);
         cudaCheckError(cudaDeviceSynchronize());
         cudaCheckError(cudaMemcpy(&host_mse, dev_mse_value, sizeof(float), cudaMemcpyDeviceToHost));
-        if (ep % 10 == 0)
+        if (ep % 10 == 0 || ep == 1)
         {
-            printf("Epochs: %d, Current MSE: %f\n", ep, host_mse);
+            printf("Epoch: %d, Current MSE: %f\n", ep, host_mse);
         }
     }
 
